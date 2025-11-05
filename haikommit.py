@@ -42,6 +42,9 @@ class SyllableCounter:
             'feature': 2, 'bugfix': 2, 'hotfix': 2, 'patch': 1,
             'added': 2, 'removed': 2, 'updated': 3, 'fixed': 1,
             'changed': 1, 'created': 3, 'deleted': 3,
+            'tested': 2, 'passed': 1, 'failed': 1, 'working': 2,
+            'better': 2, 'improved': 2, 'modified': 3, 'complete': 2,
+            'ready': 2, 'apply': 2, 'applied': 2,
         }
     
     def count_syllables(self, word: str) -> int:
@@ -135,6 +138,11 @@ class DiffAnalyzer:
         
     def analyze(self, diff_output: str) -> Dict[str, any]:
         """Analyze the git diff and extract information"""
+        # Reset state
+        self.intent = 'change'
+        self.files = []
+        self.keywords = []
+        
         self._detect_intent(diff_output)
         self._extract_files(diff_output)
         self._extract_keywords(diff_output)
