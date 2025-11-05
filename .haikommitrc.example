@@ -1,0 +1,14 @@
+{
+  "syllables": {
+    "kubernetes": 4,
+    "myproject": 2,
+    "dockerfile": 3,
+    "webpack": 2,
+    "graphql": 2,
+    "mongodb": 3,
+    "postgresql": 4,
+    "redis": 2,
+    "nginx": 2,
+    "apache": 3
+  }
+}
